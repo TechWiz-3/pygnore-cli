@@ -1,3 +1,8 @@
 #!/bin/bash
 
-# coming soon
+curl https://raw.githubusercontent.com/TechWiz-3/pygnore/main/Python.gitignore > ~/.pygnore
+
+if [[ $? == 0 ]]
+then
+    echo "Installation successful"
+fi
