@@ -5,7 +5,7 @@ Super simple python CLI tool to generate a gitignore using the github python git
 ## Installatiion
 
 ```py
-pip install pygnore
+pip install pygnore-cli
 ```
 
 ## Usage
