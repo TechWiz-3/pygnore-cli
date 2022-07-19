@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+
+from os.path import exists
+from os.path import expanduser
+from sys import exit
+
+HOME = expanduser("~")
+
+
+def write_gitignore():
+    with open(".gitignore", "w") as f:
+        with open(f"{HOME}/.pygnore") as template:
+            print("Writing gitignore file...")
+            for line in template:
+                f.write(line)
+
+
+if __name__ == "__main__":
+    if exists(".gitignore"):
+        print("Gitignore file already exists")
+        proceed = input("Proceed? [y/n] ")
+        if proceed.lower() not in ("yes", "y", ""):
+            print("Cya later alligator")
+            exit()
+    try:
+        write_gitignore()
+    except FileNotFoundError:
+        # install template in ~/.pygnore
+        print("Template file not found")
+        with open("Python.gitignore", "r") as template:
+            with open(f"{HOME}/.pygnore", "w") as f:
+                print("Installing template in home directory...")
+                for line in template:
+                    f.write(line)
+        write_gitignore()
+    except:
+        print("Error occured")
+    else:
+        print("Pygnore successful")
