@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl https://raw.githubusercontent.com/TechWiz-3/pygnore/main/Python.gitignore > ~/.pygnore
+curl https://raw.githubusercontent.com/TechWiz-3/pygnore-cli/main/Python.gitignore > ~/.pygnore
 
 if [[ $? == 0 ]]
 then
