@@ -1,5 +1,5 @@
 default:
-	echo "make install\nmake uninstall\nmake update"
+	@printf "targets:\nmake install\nmake uninstall\nmake update"
 
 install:
 	cp Python.gitignore ~/.pygnore
