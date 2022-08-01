@@ -1,9 +1,9 @@
 default:
-	@printf "targets:\nmake install\nmake uninstall\nmake update"
+	@printf "targets:\nmake install\nmake uninstall\nmake update\n"
 
 install:
 	cp Python.gitignore ~/.pygnore
-	cp pygnore /usr/local/bin && chmod +x /usr/local/bin/pygnore
+	cp pygnore /usr/local/bin && sudo chmod +x /usr/local/bin/pygnore
 
 uninstall:
 	rm /usr/local/bin/pygnore ~/.pygnore
