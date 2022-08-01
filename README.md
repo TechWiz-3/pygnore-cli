@@ -5,10 +5,11 @@ Super simple python CLI tool to generate a gitignore using the github python git
 ## Installatiion
 
 
-Pip installation now available - it is working for me however if you encounter any issues please open an issue :)
+Pip installation currently unavailable - use the `Makefile` for now :pray:
 
-```py
-pip install pygnore-cli
+```sh
+git clone https://github.com/TechWiz-3/pygnore-cli.git && cd pygnore-cli
+make install
 ```
 
 ## Usage
