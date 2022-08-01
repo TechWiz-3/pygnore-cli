@@ -3,7 +3,7 @@ default:
 
 install:
 	cp Python.gitignore ~/.pygnore
-	cp pygnore /usr/local/bin && sudo chmod +x /usr/local/bin/pygnore
+	sudo cp pygnore /usr/local/bin && sudo chmod +x /usr/local/bin/pygnore
 
 uninstall:
 	rm /usr/local/bin/pygnore ~/.pygnore
