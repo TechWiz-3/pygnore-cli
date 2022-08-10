@@ -6,7 +6,6 @@ from sys import exit
 
 HOME = expanduser("~")
 
-
 def write_gitignore():
     with open(".gitignore", "w") as f:
         with open(f"{HOME}/.pygnore") as template:
@@ -27,12 +26,16 @@ if __name__ == "__main__":
     except FileNotFoundError:
         # install template in ~/.pygnore
         print("Template file not found")
-        with open("Python.gitignore", "r") as template:
-            with open(f"{HOME}/.pygnore", "w") as f:
-                print("Installing template in home directory...")
-                for line in template:
-                    f.write(line)
-        write_gitignore()
+        try:
+            with open("Python.gitignore", "r") as template:
+                with open(f"{HOME}/.pygnore", "w") as f:
+                    print("Installing template in home directory...")
+                    for line in template:
+                        f.write(line)
+        except FileNotFoundError:
+            print("Template file not installed -> please cd into the cloned project dir and either do `make install` or `python3 pygnore`")
+        else:
+            write_gitignore()
     except:
         print("Error occured")
     else:
