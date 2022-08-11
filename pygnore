@@ -7,21 +7,24 @@ from sys import exit
 HOME = expanduser("~")
 
 def write_gitignore():
-    with open(".gitignore", "w") as f:
-        with open(f"{HOME}/.pygnore") as template:
-            print("Writing gitignore file...")
-            for line in template:
-                f.write(line)
-    except:
-        print("hmmm")
+    if exists(f"{HOME}/.pygnore"):
+        with open(".gitignore", "w") as f:
+            with open(f"{HOME}/.pygnore") as template:
+                print("Writing gitignore file...")
+                for line in template:
+                    f.write(line)
+    else:
+        raise FileNotFoundError
 
 def write_template():
-    template = open("Python.gitignore")
     with open("Python.gitignore", "r") as template:
         with open(f"{HOME}/.pygnore", "w") as f:
             print("Installing template in home directory...")
             for line in template:
                 f.write(line)
+    print("Template installed successfully")
+    from sys import exit
+    exit()
 
 
 if __name__ == "__main__":
@@ -38,14 +41,13 @@ if __name__ == "__main__":
         print("Template file not found")
         import os
         if os.path.basename (os.getcwd()) in ("pygnore", "pygnore-cli"):
-            print("Initiating repo based installation")
+            print("Initiating repo based installation of the gitignore template")
             try:
                 write_template()
             except FileNotFoundError:
                 print("Error: you are either not in the project repo or the file Python.gitignore has been removed.")
-            print("Template file not installed -> please cd into the cloned project dir and either do `make install` or `python3 pygnore`")
         else:
-            write_gitignore()
+            print("Template file not installed -> please cd into the cloned project dir and either do `make install` or `python3 pygnore`")
     except:
         print("Error occured")
     else:
