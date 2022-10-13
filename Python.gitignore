@@ -1,3 +1,6 @@
+# This .gitignore was created by pygnore-cli
+# https://github.com/TechWiz-3/pygnore-cli
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
