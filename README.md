@@ -23,3 +23,8 @@ pygnore
 ---
 ### 🎉 Commit labels
 If you're interested in the commit labels used in this repo, check out my [git commit emoji](https://github.com/TechWiz-3/git-commit-emojis) project
+
+## Contributors
+<a href="https://github.com/abel-otegbola/clock-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=abel-otegbola/clock-app" />
+</a> 
